@@ -1,0 +1,9 @@
+cucumber\options\TestRunner.class
+pojo\deletePlacePojo.class
+stepDefinitions\Hooks.class
+Utils\SpecBuilders.class
+pojo\AddPlacePojo.class
+Utils\APIResources.class
+Utils\TestDataBuild.class
+stepDefinitions\AddPlaceTest.class
+pojo\Location.class
