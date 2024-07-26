@@ -1,0 +1,124 @@
+1. Reverse of a number
+
+public class ReverseOfNum {
+	public static int revNumber(int num){
+
+        int temp = num;
+        int rev = 0;
+        while (temp != 0){
+            int d = temp%10;
+            rev = rev * 10 + d;
+            temp = temp/10;
+        }
+        return rev;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num = s.nextInt();
+
+        System.out.println("The reversed number is: "+revNumber(num));
+    }
+}
+
+
+2. Factorial of a nuber
+public class Factorial {
+
+    public static int fact(int num){
+        int i ;
+        int fact = 1;
+
+        for(i = 1 ; i<=num ; i++ ){
+            fact = fact * i;
+        }
+        return fact;
+    }
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int n = s.nextInt();
+        System.out.println("Enter the number: "+fact(n));
+    }
+}
+
+3. Power of a number
+
+public class PowerOfNumber {
+
+    //Approach - 1
+    public static int power(int x, int exponent){
+        int pow = 1;
+        for (int i = 0; i < exponent ; i++) {
+            if(exponent == 0 )
+                return 1;
+
+            pow = pow * x;
+        }
+       return pow;
+    }
+
+    //Approach - 2
+    public static int power1(int x, int y){
+
+        if(y==0)
+            return 1;
+        if(y % 2 == 0){
+            return power1(x,y/2)*power1(x,y/2);
+        }else
+            return  x * power1(x,y/2)*power1(x,y/2);
+    }
+
+    public static void main(String[] args) {
+        int x = 2;
+        int exponent = 3;
+        System.out.println(x +" to the power of " + exponent + " is "+ power(x,exponent));
+
+    }
+}
+
+4. prime number
+
+5. ArmStrong number
+public class ArmStrong {
+
+    public static  int pow(int x, int exp){
+        int pow = 1;
+        for (int i = 0; i < exp ; i++) {
+            if ( exp == 0)
+                return 1;
+            pow = pow * x;
+        }
+        return pow;
+    }
+
+    public static  int extract(int num){
+        int i = 0;
+        while(num != 0) {
+            ++i;
+            num = num/10;
+        }
+        return i;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num = s.nextInt();
+        int n = extract(num);
+        int temp = num, sum =0;
+
+        while (temp != 0){
+            int x = temp % 10;
+            sum = sum +pow(x, n);
+            temp/=10;
+        }
+
+        if(num == sum){
+            System.out.println(num + " is armstrong");
+        }else
+            System.out.println(num + " is not an armstrong");
+
+    }
+}

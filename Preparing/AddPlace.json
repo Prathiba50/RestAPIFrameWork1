@@ -1,0 +1,16 @@
+{
+  "location": {
+    "lat": -38.383494,
+    "lng": 33.427362
+  },
+  "accuracy": 100,
+  "name": "suntech office",
+  "phone_number": "(+91) 983 893 3937",
+  "address": "45,BSK, 2nd block",
+  "types": [
+    "Coles park",
+    "shop"
+  ],
+  "website": "http://OfficeOfFinance.com",
+  "language": "French-IN"
+}

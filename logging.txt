@@ -16,18 +16,18 @@ Body:
         "lng": 33.427362
     },
     "accuracy": 101,
-    "name": "Desoza",
+    "name": "Abownsle",
     "phone_number": "(+91) 983 893 3937",
-    "address": "Asia cauvery Street",
+    "address": "World cross center1",
     "website": "http://OfficeOfFinance.com",
-    "language": "Frech",
+    "language": "English",
     "types": [
         "shoe park1",
         "shop1"
     ]
 }
 HTTP/1.1 200 OK
-Date: Fri, 21 Jun 2024 10:51:12 GMT
+Date: Thu, 25 Jul 2024 08:29:56 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,17 +40,17 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "cb2adfaf3c7834969fd1aeb717570211",
+    "place_id": "36412b6142397a0cf3bee1a9249014ca",
     "scope": "APP",
-    "reference": "bef517f6545c51dd7c154cb43f2719fdbef517f6545c51dd7c154cb43f2719fd",
-    "id": "bef517f6545c51dd7c154cb43f2719fd"
+    "reference": "8a0bd82269b6c1c520d9327d1acdd2008a0bd82269b6c1c520d9327d1acdd200",
+    "id": "8a0bd82269b6c1c520d9327d1acdd200"
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=cb2adfaf3c7834969fd1aeb717570211
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=36412b6142397a0cf3bee1a9249014ca
 Proxy:			<none>
 Request params:	<none>
 Query params:	key=qaclick123
-				place_id=cb2adfaf3c7834969fd1aeb717570211
+				place_id=36412b6142397a0cf3bee1a9249014ca
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -59,7 +59,92 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Fri, 21 Jun 2024 10:51:13 GMT
+Date: Thu, 25 Jul 2024 08:29:58 GMT
+Server: Apache/2.4.52 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 254
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.383494",
+        "longitude": "33.427362"
+    },
+    "accuracy": "101",
+    "name": "Abownsle",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "World cross center1",
+    "types": "shoe park1,shop1",
+    "website": "http://OfficeOfFinance.com",
+    "language": "English"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383494,
+        "lng": 33.427362
+    },
+    "accuracy": 101,
+    "name": "BBouse",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Sea cross center1",
+    "website": "http://OfficeOfFinance.com",
+    "language": "Spanish",
+    "types": [
+        "shoe park1",
+        "shop1"
+    ]
+}
+HTTP/1.1 200 OK
+Date: Thu, 25 Jul 2024 08:29:59 GMT
+Server: Apache/2.4.52 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "e43b2bde1cba8361b9c8ef3d883d1fc5",
+    "scope": "APP",
+    "reference": "6cbaab4d208cbc9968a20d6c9a43fc566cbaab4d208cbc9968a20d6c9a43fc56",
+    "id": "6cbaab4d208cbc9968a20d6c9a43fc56"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=e43b2bde1cba8361b9c8ef3d883d1fc5
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=e43b2bde1cba8361b9c8ef3d883d1fc5
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Thu, 25 Jul 2024 08:29:59 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -76,12 +161,12 @@ Content-Type: application/json;charset=UTF-8
         "longitude": "33.427362"
     },
     "accuracy": "101",
-    "name": "Desoza",
+    "name": "BBouse",
     "phone_number": "(+91) 983 893 3937",
-    "address": "Asia cauvery Street",
+    "address": "Sea cross center1",
     "types": "shoe park1,shop1",
     "website": "http://OfficeOfFinance.com",
-    "language": "Frech"
+    "language": "Spanish"
 }
 Request method:	POST
 Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123
@@ -96,10 +181,10 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "place_id": "cb2adfaf3c7834969fd1aeb717570211"
+    "place_id": "e43b2bde1cba8361b9c8ef3d883d1fc5"
 }
 HTTP/1.1 200 OK
-Date: Fri, 21 Jun 2024 10:51:14 GMT
+Date: Thu, 25 Jul 2024 08:30:00 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST

@@ -1,0 +1,48 @@
+Introduction:
+I hope already most of the people here knows that my name is Prathibha.
+I am a BE graduate spesialized in the stream of Electronics and communications.
+I have worked many clients  Siemens, Byjus, Statebank of India.
+I have 5+ years experience in to testing both automation and manual.
+Curently I am working in suntechnologies. I have been worked  web applications automation using selenium  java 
+I have  been working with different domains like Educational domain, building infrastructure, Information domain,finacial domains.
+
+All my privious projects are completely web based applications and those applcations are provides ene-to-end business integration to our clients.
+That enables them to offer an uniterrupted contineous business verticle integrations
+
+As a test engineer , I have good experience on writing testcases,preparing tracebility matrix and maitaining the bug reports.
+I have successfully performed  different testings like smoke testing, regression testing and sanity testing and so on..
+And also I have very good knowledge on automation tool like selenium webdriver. 
+we also used jira tool for test management and bug reports.
+in the our project we have automated major portion of our manual test suite usimg selenium webdriver and 
+by that we were able to save lots of efferts spent on the repetative works.
+Extensively worked in executing tests by using TestNG, Maven, and Jenkins.
+
+The Software Quality Engineering group is responsible for testing various applications utilized by Bank members.
+ Many of the applications may be entitled to one whole project that involves code deliverables through phases.
+ The internal group works with a team of offshore consultants to speed up testing tasks and provide project managers with results on a timely manner
+
+ 
+Trained the new team members on selenium and to create automation test script using SWAUT BDD framework
+I provided training to new team members on using Selenium, an automation tool for web testing. 
+I also taught them to create automation test scripts using the Swaut BDD framework, which promotes collaboration and efficient testing practices. 
+This training enhances our team's ability to conduct effective quality assurance
+
+
+Involved in Creating and Automation dashboard using JSP java to execute the scripts from UI for upcoming projects
+Automation Dashboard allows Users to execute Selenium BDD automation scripts via web-based dashboard. 
+Each application module consist of an application overview, automation and manual test scripts, generated reports, and Help and Contact Us sections.
+
+(Instead Qmetry) 
+Test managemnt tool:
+TestRail is a web-based test case management tool. 
+It is used by QA engineers, developers, and team leads to manage, track, and organize software testing efforts. 
+TestRail allows team members to design test cases, organize test suites, execute test runs, 
+and track their results, all from a modern and easy-to-use web interface. 
+
+Manage test cases, suites, and test runs
+Boost testing productivity
+Real-time insights into your testing progress
+
+Team self motivated
+
+

@@ -18,7 +18,6 @@ public class AddPlaceTest  extends  SpecBuilders{
 
 
     public static RequestSpecification givenRes;
-    public static ResponseSpecification resSpec;
     public static Response response;
     TestDataBuild data = new TestDataBuild();
     public static String place_ID;
@@ -39,12 +38,13 @@ public class AddPlaceTest  extends  SpecBuilders{
 
             if (httpMethod.equalsIgnoreCase("POST")) {
                 response = givenRes.when().post(resourseApi.getResourse());
-//                System.out.println("---------response---------------");
-//                System.out.println(response.asString());
+                System.out.println("---------response---------------");
+                System.out.println(response.asString());
             } else if (httpMethod.equalsIgnoreCase("GET")) {
                 response = givenRes.when().get(resourseApi.getResourse());
-//                System.out.println("---------response---------------");
-//                System.out.println(response.asString());
+                System.out.println("---------response---------------");
+                System.out.println(response.asString());
+
             }
         }catch (Exception ex){
             ex.printStackTrace();
@@ -62,6 +62,7 @@ public class AddPlaceTest  extends  SpecBuilders{
 
     @And("{string} in response body is {string}")
     public void in_response_body_is(String keyValue, String expectedValue) {
+        System.out.println("Response to validate status: "+response.asPrettyString());
         assertEquals(getJsonPath(response,keyValue),expectedValue);
     }
 

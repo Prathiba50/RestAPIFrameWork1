@@ -1,0 +1,207 @@
+1)Trigger the same API endpoint multiple times with a little update in the request body to validate negative scenarios. Each negative
+ scenario results in a different error message in the response body.
+
+
+import io.restassured.RestAssured; 
+import io.restassured.specification.RequestSpecification; 
+import org.junit.Assert; 
+import org.junit.Test; 
+import io.restassured.response.Response; 
+import io.restassured.response.ResponseBody; 
+import io.restassured.specification.RequestSpecification; 
+
+
+public class Upd1 { 
+
+String id = "6856531"; 
+String baseUrl="https://gorest.co.in"; 
+String token = "b173629dbbaa7908f92f98523a8a06f3d033f0722d43b25742c5a212f5969f3c"; 
+
+//Valid update -- 200
+@Test
+public void updUsers1() {
+    String name ="Test3";
+    RestAssured.baseURI = baseUrl;
+    RequestSpecification httpRequest = RestAssured.given().header("Authorization", "Bearer " + token)
+            .header("Content-Type", "application/json");
+
+    Response res = httpRequest.body("{"name":"" +name + "", "id": "" + id + ""}").put("/public/v2/users/6856531");
+    
+    System.out.println("The response code - " +res.getStatusCode());
+    Assert.assertEquals(res.getStatusCode(),200);
+
+}
+
+
+//Invalid Token - 401
+@Test
+public void updUsers2() {
+    String token1 = "b173629dbbaa7908f92f98523a8a06f3d033f0722d43b25742c5a212f5969f3c1";
+    RestAssured.baseURI = baseUrl;
+    RequestSpecification httpRequest = RestAssured.given().header("Authorization", "Bearer " + token1)
+            .header("Content-Type", "application/json");
+
+    Response res = httpRequest.body("{"name":"" +name + "", "id": "" + id + ""}").put("/public/v2/users/6856531");
+    
+    System.out.println("The response code - " +res.getStatusCode());
+    Assert.assertEquals(res.getStatusCode(),401);
+
+}
+
+// Resource not found - 404
+@Test
+public void updUsers3() {    
+    RestAssured.baseURI = baseUrl;
+    RequestSpecification httpRequest = RestAssured.given().header("Authorization", "Bearer " + token)
+            .header("Content-Type", "application/json");
+
+    Response res = httpRequest.body("{"name":"" +name + "", "id": "" + id + ""}").put("/public/v2/users/6856532");
+    
+    System.out.println("The response code - " +res.getStatusCode());
+    Assert.assertEquals(res.getStatusCode(),404);
+
+}
+
+//Invalid token = 401 Unauthorized
+
+Response: 
+{
+    "message": "Invalid token"
+}
+
+//Has already been taken - 422
+@Test
+public void updUsers3() {    
+    RestAssured.baseURI = baseUrl;
+    RequestSpecification httpRequest = RestAssured.given().header("Authorization", "Bearer " + token)
+            .header("Content-Type", "application/json");
+
+    Response res = httpRequest.body("{"name":"" +name + "", "id": "" + id + ""}").put("/public/v2/users/6856531");
+    
+    System.out.println("The response code - " +res.getStatusCode());
+    Assert.assertEquals(res.getStatusCode(),422);
+
+}
+
+
+}
+
+
+-----------------------------------------------------------------------------------------------
+
+2) Trigger different API endpoints (mostly POST) and need to validate response body:
+
+
+import io.restassured.RestAssured; 
+import io.restassured.specification.RequestSpecification; 
+import org.junit.Assert; 
+import org.junit.Test; 
+import io.restassured.response.Response; 
+import io.restassured.response.ResponseBody; 
+import io.restassured.specification.RequestSpecification; 
+
+public class Pos { 
+
+public void UserAdd() 
+{ 
+    RestAssured.baseURI ="https://gorest.co.in/public/v2/"; 
+    RequestSpecification httpRequest = RestAssured.given().header("Authorization", "Bearer " + token)
+            .header("Content-Type", "application/json");
+
+    JSONObject requestParams = new JSONObject();
+    requestParams.put("id", "6856639");
+    requestParams.put("name", "Name1");
+    requestParams.put("email", "Name1@gmail.com");
+    requestParams.put("gender", "male");
+    requestParams.put("status", "active");
+
+    request.body(requestParams.toJSONString());
+    Response response = httpRequest.post("/users");     
+    Assert.assertEquals(response.getStatusCode(),201);    
+    String successCode = response.jsonPath().get("SuccessCode");
+    Assert.assertEquals( "Correct Success code was returned", successCode, "OPERATION_SUCCESS");
+    	
+     
+}
+
+}
+
+
+---------------------------------------------------------------------------------
+
+3)Validate response body field value comparing request body field value. Please consider nested arrays in the response body.
+
+//Nested Check
+
+import static io.restassured.RestAssured.given;
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+public class nestedTest {
+
+   @Test
+   public void nested() {
+      
+      RestAssured.baseURI = "https://gorest.co.in/public/v2/users";      
+      Response response = given()
+      .when()
+      .get("/6956688");
+      
+      JsonPath j = new JsonPath(response.asString());
+      
+      String pin = j.getString("details.address.pin");
+      System.out.println("Address Pin: " + pin);
+      Assert.assertEquals("600000",pin,"Pin Details Check")
+   }
+}
+
+2) Response Validation
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+public class ResponseValidation {
+
+    @Test
+    public void nestedJSONObject() {
+        given()
+            .when()
+                .get("https://gorest.co.in/public/v2/users/6956688")
+            .then()
+                .statusCode(200)
+                .body("details.address.state", equalTo("TN"))
+                .body("details.address.pin", startsWith("6"));
+    }
+}
+
+3) Getting Response body and store it as String:
+
+import static io.restassured.RestAssured.*;
+
+public class responseBodyasString {
+
+    @Test
+    public void testRetrieveResponseBody() {
+        Response response =
+            given()
+            .when()
+                .get("https://gorest.co.in/public/v2/users")
+            .then()
+                .statusCode(200)
+            .extract()
+                .response();
+        
+        String responseBody = response.getBody().asString();
+        System.out.println("Response Body: " + responseBody);
+    }
+}
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+
+

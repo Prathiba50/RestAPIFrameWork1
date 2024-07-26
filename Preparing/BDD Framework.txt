@@ -1,0 +1,150 @@
+Difference Between TDD and BDD
+Test driven development(TDD)
+TDD primarily focuses on the implementation details of the code, ensuring that individual units or components of the software function correctly.
+TDD is typically associated with unit testing.
+
+
+
+
+Behavior driven development(BDD)
+BDD places more emphasis(special importance)on the behavior and requirements of the software from a user's perspective.
+It aims to ensure that the software meets the desired behavior as specified by stakeholders.
+
+Testing Level:
+ BDD cause to happen various testing levels, including acceptance testing and end-to-end testing. 
+It often involves testing the entire system or specific user scenarios.
+
+Terminology:
+ In BDD, tests are referred to as "scenarios" or "specifications." 
+BDD scenarios are typically written in a natural language format using Given-When-Then constructs and are often stored in feature files.
+
+Process:
+	Define behavior: Collaboratively define behavior and requirements using plain language scenarios.
+Automate scenarios: Write automated tests (step definitions) that implement the behavior described in the scenarios.
+Execute scenarios: Run the automated scenarios to verify that the software behaves as specified.
+Report results: Generate reports that show whether the behavior is met or not.
+
+ BDD involves collaboration between developers, testers, product owners, and other stakeholders. 
+ It aims to bridge the communication gap between technical and non-technical team members.
+ 
+ In summary, TDD and BDD are complementary methodologies, each with its own focus and scope within the software development process. 
+ TDD is more developer-centric and focuses on unit-level testing and code correctness, 
+ while BDD is more user-centric and concentrates on behavior, collaboration, and acceptance testing to ensure that the software meets user expectations. 
+ 
+ 
+ BDD Tools:
+ Cucmber:
+  It supports multiple programming languages, including Java, Ruby, JavaScript, and more.
+  Cucumber allows you to write feature files in Gherkin syntax and provides step definitions to implement the behavior. 
+  It integrates with various testing frameworks, making it a versatile choice for BDD.
+  
+ SpecFlow:
+	SpecFlow: SpecFlow is a BDD framework for .NET languages like C# and VB.NET. It enables you to write feature files in Gherkin 
+	and provides integration with Visual Studio and other development environments. 
+	SpecFlow also generates code-behind files for your scenarios.
+
+Behave:
+	Behave is a Python-based BDD framework that uses Gherkin for writing feature files. 
+	It integrates seamlessly with Python test runners like unittest and pytest.
+	Behave is often used for testing Python applications.
+	
+JBehave:
+	JBehave is a BDD framework for Java applications. 
+	It follows the Gherkin language for writing feature files and integrates with popular Java testing frameworks like JUnit and TestNG.
+
+We have few more BDD tools such as 
+Cypress (with Cypress-Cucumber-Preprocessor), Karate, Guage etc.. 
+ 
+ 
+Developing the BDD framework using Cucumber tool.
+ 1.Install intellij.
+ 2.Create a maven project
+ 3.Update pom.xml with all required cucumber  and selenium dependwncies.
+	cucumber-core
+	cucumber-html
+	cucumber-java
+	cobertura
+	cucumber-junit
+	cucumber-jvm-deps
+	cucumber-reporting
+	hamcrest-core
+	gherkin
+	selenium-java
+4.Add Intellij for java plugin.
+5. we need to add Junit and hamcrest libraries to your project.
+
+End-to-End flow of BDD Framework:
+1. we need to create feature file using gherkin language.
+2. need to implement the step definition file.
+3. To execution of multiple feature files we need to create one TestRunner junit class.
+
+gherkin --> Is a language which contains certain number of keywords.
+
+Feature:
+Scenario:
+Given - step is used to set the context
+When - step is the action /interaction with the system.
+Then - step for representing the outcome
+And - step for extending the previous step.
+
+
+Create folder structure:
+Project Name
+	|
+	Features(Folder)
+	|
+	PageObject(Package)
+	|
+	StepDifinitions
+	|
+	Utilites(Package)
+	|
+	Drivers(Folder)
+	|
+	Target(report)
+	|
+	pom.xml
+
+copy drivers into drivers folder.
+
+
+Page Factory in selenium:
+In order to supprot the PageObject pattern,WebDriver supports library contains a factory class.
+
+Usefull Tips:
+@CacheLookup --> It can be instruct the InitElement() method to cache the element once its located and
+ so that it will not be searched over and over again whenever calling it from any method.
+
+There is another way to identify an elemets using findBy annotaions in pageFActory:-
+//    @FindBy(how = How.ID, using = "txtUsername" )
+//    private WebElement UN;
+
+Tags in cucumber:
+
+What are tags in cucumber-->
+Tags can be placed  above following gherkin elements.
+*Feature
+*Scenario
+*Scenario Outline
+*Examples
+
+It is not possible to place tags above Background or steps(Given,When,Then,And and But).
+
+Tags are inherited by child elements.
+Tags that are placed above Feature will be inherited by Scenario,Scenarion outline or Examples.
+Tags that are placed above a Scenario Outline will be inherited by Examples. 
+
+What are Hooks:
+Blocks of code that runs before OR After each scenario.
+
+Hooks in Cucumber are like Listeners in TestNG
+
+Can define hooks by using annotations @Before @After
+
+Scenario Hooks - Runs before and after each scenario.
+Step Hooks - runs before and after each step.
+COnditional Hooks - hooks assosiated with tags for conditional execution
+
+
+
+ 

@@ -1,0 +1,15 @@
+AbstractClass
+Interface
+
+Interface:
+1) An Interface is a blue print of class.
+2) Interface contains final and static variables.
+3) Interface contains abstract methods(Also allowed default methods
+ and static methods from java 8 onwards)
+4) An Abstract method is a method contains signature but not body(Un-implemented method).
+5) Methods in interface are public.
+6) Interface supports the functinality of multiple inheritance.
+7) We can define interface with interface keyword.
+8) A class extends another class, an interface extends another interface, but a class implements an interface.
+9) We can create object reference for Interface but we cant instantiate interface.
+

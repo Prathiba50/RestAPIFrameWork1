@@ -1,0 +1,10 @@
+BDD Notes
+
+1.UndefinedStepException
+
+-> AbstractTestNGCucumberTests
+
+ <bean id="LoginPage" class="pages.LoginPage"/>
+    <bean id="SearchPage" class="pages.SearchPage"/>
+    <bean id="SelectPage" class="pages.SelectPage"/>
+    <bean id="snapdealLogin" class="pages.snapdealLogin"/>

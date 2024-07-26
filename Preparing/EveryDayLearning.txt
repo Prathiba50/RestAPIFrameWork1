@@ -1,0 +1,392 @@
+Lamda Expressions:
+
+Objective of Lamda Expression:
+1) To bring the functional features in java
+2) Code optimization/ consize in code
+
+Lamda Expression is an Ananymous function in java
+--> Ananymous function means 
+1) A method does not have name
+2) Function does not have a access modifier
+3) Function does not have return type.
+
+
+public void m1(){
+Syso("welcome");
+}
+
+()->Syso("Welcome");
+
+
+public void add(int a,int b){
+Syso(a+b);
+}
+
+(a,b)->Syso(a+b);
+
+
+public int mul(int a){
+return(a*a);
+}
+
+(a)->{return(a*a);};
+OR
+(a) -> a*a;
+OR
+a -> a*a;
+
+Normal Interface 
+
+functional interface
+1) should have single abstract method 
+2) Any number of default and static methods
+
+Examples for Function Interfaces:
+
+Runnable -> run();
+Collable -> call();
+Comparable -> compareTo();
+ActionListener -> actionPerformed();
+
+To invoke the Lamda expressions we need use functional interface.
+
+What are Lambda Expressions?
+A lambda expression is essentially a function that can be created without belonging to any class.
+It can be passed around like an object and executed on demand.
+Lambda expressions are commonly used for implementing simple event listeners, callbacks, 
+or in functional programming with the Java Streams API1.
+
+String s = input1.tolowercase(){
+}
+
+//Programming---(22/04/2024)
+1)Count Vowels and consonants
+2)Max occurring Character in a String
+3)Palindrome of string
+4)Reverse of a String
+5)Remove whitespace
+
+5. Write a program for sorting an array?
+Input: int value[] = {23,13,56,98,76}; Output: {13,23,56,76,98}
+
+
+//21-05-2024
+--> How to Parse Complex Json
+--> ETS - getRequiredColumnDataFromSpecificTable(Strong tableName, String columnName){
+		List<Map<String,Object>> = data;
+		try{
+		String sql = "select * from "+ tableName;
+		data = jdbcTemplate.queryForList(sql);
+
+
+		}catch(Exception ex){
+			e.printStackTrace();
+		}
+		
+	return data.get(0).get(columnName).toString();
+
+	}
+
+  	
+	String jsonMsgResponse = getRequiredColumnDataFromSpecificTable("TableName","ColumnName");
+	JsonObject jsonObj = new JsonParsor().parse(jsonMsgResponse).getAsJsonObject();
+	String product_code = jsonObj.getAsJsonObject("trade").getAsJsonObject("product").get("product_code").toString(); 
+
+
+Understanding structure of complex Nestes json and its Array Notations
+
+Json used in this Section with Queries to solve
+{
+"dashboard": {
+"purchaseAmount": 910,
+"website": "rahulshettyacademy.com"
+},
+"courses": [
+{
+"title": "Selenium Python",
+"price": 50,
+"copies": 6
+},
+{
+"title": "Cypress",
+"price": 40,
+"copies": 4
+},
+{
+"title": "RPA",
+"price": 45,
+"copies": 10
+}
+]
+}
+
+1. Print No of courses returned by API
+2. Print Purchase Amount
+3. Print Title of the first course
+4. Print All course titles and their respective Prices
+5. Print no of copies sold by RPA Course
+6. Verify if Sum of all Course prices matches with Purchase Amount
+
+//22-05-2025
+//Java-8 
+
+1) WAP to find second smallest in an array
+2) WAP to find common elements from the two arrays
+3) WAP to reverse an Array
+4) WAP to find longest length string in an given string array.
+
+
+API Testing
+Advanced Paylaod creation strategies
+-> Dynamicaly build json payload with external data inputs
+-> parameterize the API test with multiple data sets.
+-> how to send static json files(payload) directly into post method of rest assured.
+-> feed json payload from Excel from Hashmap. 
+
+
+
+24/05/2024
+Serialization/Deserialization
+
+Oath2 Mechanism:
+Need to continue From 118 video.
+
+
+28/05/2024
+Request And response spec builders
+
+
+->Injecting JWT Session token into API Calls using Postman
+->How to work with POST Call form-data
+->How to Send Attachments through request using Postman
+->Unauthorized 403 API Example with Postman
+
+End to End Flow
+Login API -> Create Product -> Purchase Order on created Product -> Delete order -> Delete Product
+
+Create Product Contract –
+
+End point –
+
+https://rahulshettyacademy.com/api/ecom/product/add-product
+
+Http Method - POST
+Form Data -
+
+productName:qwerty
+productAddedBy:{{userId}}
+productCategory:fashion
+productSubCategory:shirts
+productPrice:11500
+productDescription:Addias Originals
+productFor:women
+
+Delete Product :
+
+https://rahulshettyacademy.com/api/ecom/product/delete-product/{{productId}}
+
+Http Method  DELETE
+
+
+29/05/2024
+Excetions experienced while doing API Testing
+UnrecognizedPropertyException --> jackson Exception
+
+03/06/2024
+RestApi Automation Framework from Scratch
+
+--> Create Maven Project with Cucumber and RestAssured Dependies
+--> Define Project Structure with cucumber framework setup
+--> Create a feature file with the testcases you want to automate
+--> Implement the smart step Definition files with supported code
+--> Build Utils file to define all reusable request and response specifications
+--> Build pojo classes for serializing and de-serializing json Payload
+--> Implement logging into Framework to request and response details
+--> Develop End to End Functinality Test with all Validations and Assersions
+--> Define Global Variable and drive all Global variables from the properties file
+--> Define enum class with constants to centralize all resouces details  
+--> Implement Data Driven Mechanism to drive dynamically from feature files
+--> Implement Parameterization to run tests with multiple data sets using cucmber example keyword
+--> Add More Tests and implement tagging mechanism to run selected tests form Test Runner file
+--> Implement Pre and Postconditions for tests with cucmber Hooks
+--> Execute Complete framework from Maven Commands 
+
+To run on command Line --> Go to project folder --> mvn test
+-->mvn test verify -Dcucumber-options="--tags @AddPlace"
+
+--> Implement Maven driven global values into test for dynamic execution
+--> Generate Report for Tst Execution results
+--> Integrate framework into jenkins CI/CD tool
+
+Go to jenkins.war file path and run below Command
+java -jar jenkins.war -httpPort=9090
+UserName = CodeBind
+Password = Welcome@123
+
+--> Implement Parameterized Jenkins Job to choose the global values at run time.
+
+Jenkins CI/CD Pipeline
+And GItHub Pull Request
+
+
+--> GitHub Credentials
+UserName = prathibhasuresh50@gmail.com
+Password = Githu@123
+
+
+--> If we have a code 
+https://github.com/Prathiba50/VideoGame.git
+
+Perform some Commands:
+Goto project path and right click open git absh GUI
+
+=> initialize empty repo
+git init
+
+=>  git remote add origin https://github.com/Prathiba50/VideoGame.git
+
+=>  git status
+
+=> git add -A
+
+=>Specify remote repository UserName
+
+ git config --global user.name "Prathiba50"
+
+git config --global user.mail "prathibhasuresh50@gmail.com"
+
+=> commit code 
+ git commit -m "This is Video game Project commit"
+
+=> Check status 
+git status
+
+ git push -u origin master
+
+If you get fatal error use below 
+git config --global credential.useHttpPath true
+
+
+
+
+----------Video Game DB-------------------
+Pre-requisite: Install Gradle on Windows
+Gradle DownLoad Link: https://gradle.org/releases/
+
+DownLoad VideoGameDB --> https://github.com/james-willett/VideoGameDB?tab=readme-ov-file
+
+Run Command --> C:\VideoGameDB-master>gradlew bootRun
+
+
+Swagger UI - http://localhost:8080/swagger-ui/index.html#/l
+
+{
+  "id": 0,
+  "name": "string",
+  "releaseDate": "2024-06-07T11:15:06.989Z",
+  "reviewScore": 0,
+  "category": "string",
+  "rating": "string"
+}
+
+Jira SetUp?
+Server ID = BCKU-164V-A8BA-9OYG
+ License Key : AAAB3w0ODAoPeNqVUl2PmkAUfedXkPSlTYPhwwXXZJLiwO5qFay4mhpfRrzKbGEgM4Drvy+gRlu3JH2c
+MzPn3HPu+bSErTwqmKzpsqr11Yd+15CxM5d1Ve9KmAPJacockgOqEUU1FU2XxjQEJmB+zMAjCSDsTybuDA/tsfRGOemc790tr
+X8j15u7s+lsGLiSVyQb4P7uVQAXSNEuVO57RvnxRseqdRqyjKfbIsw79UER6S4/EA4dEua0BJTzAqSg2IiQ06wRaxC3JHFBrueGqGInGFgO
+/ATGJ+kXIiI0wQf89Jwud70nfyWsrr4P8GqAv47KabgwI8uOfqjGsrQLQbO3R/wyN+LDSiTvDluKjb1Ga3RxMnTQeOgErqeMddUwepZptPkI
+csLriXYkFpUT4CXwimKAv78qmtldKHZvYCuP/s9n6RccF1VqtSnNVFVL7RmGJu05AIvSLAPekvu04GFEBPy9ydvfTTQZp+ISq+uhP318oPVRBxy
+4rmNUuZWDs1v5c70D+bSEL+u+fN2TNCG0Qhlh4f+X4a5Vt4PeNqWF4x/tuCSuSz7fE0bFqVUZJ3lEN1WkBQcRPajf9gmhcSdMEwmnLK9E3cpR3
+PqwmeZu9ga9G7ol7rNeA7fJ/QZOHVoDMC0CFQCLRFkpR1AN7shr0rVR3HNHtrKs2gIUDGCJfiEWZeQqtJG+G3C93CVO48U=X02mq
+
+
+Steps to Automate Jira Application:
+1. Login to Jira to create Session Id using login API
+2. Add a comment to exsting Issue using add attachment API
+3. Add an attachment to exsting issue using Add Attachment API
+4. Get Issue Details and verify if added comments and attachments exist using Get Issue Api
+
+
+New topics which are covered from above examples.
+
+How to Create Session Filter for Authentication in Rest Assured Automation
+Introducing Path Parameters and Query Parammeters together in Single Test
+Sending Files as Attachments using Rest Assured with Multipart method 
+Parsing Complex json and limiting Json response through Query Parameters
+Handling HTTPS Certification Validation through Automated Code
+
+
+
+
+
+Git: version Control System
+
+You have a code:
+Initialize it as Git repository --> git init
+
+stash --> Commit
+
+
+//22/06/2024
+
+1) Prime Number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
